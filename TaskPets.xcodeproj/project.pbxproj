@@ -13,7 +13,6 @@
 		F721E36B2D4929DD00DCB256 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F721E36A2D4929DD00DCB256 /* Preview Assets.xcassets */; };
 		F721E37B2D493BA200DCB256 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F721E37A2D493BA200DCB256 /* APIManager.swift */; };
 		F721E37E2D493C1400DCB256 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = F721E37D2D493C1400DCB256 /* Alamofire */; };
-		F721E3802D493C1400DCB256 /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = F721E37F2D493C1400DCB256 /* AlamofireDynamic */; };
 		F721E3822D493C3400DCB256 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F721E3812D493C3400DCB256 /* Endpoint.swift */; };
 		F721E3842D493C6200DCB256 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F721E3832D493C6200DCB256 /* APIError.swift */; };
 		F721E3862D493F8A00DCB256 /* BreedListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F721E3852D493F8A00DCB256 /* BreedListViewModel.swift */; };
@@ -47,7 +46,6 @@
 			files = (
 				F721E3942D4AB2F500DCB256 /* Kingfisher in Frameworks */,
 				F721E37E2D493C1400DCB256 /* Alamofire in Frameworks */,
-				F721E3802D493C1400DCB256 /* AlamofireDynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,7 +185,6 @@
 			name = TaskPets;
 			packageProductDependencies = (
 				F721E37D2D493C1400DCB256 /* Alamofire */,
-				F721E37F2D493C1400DCB256 /* AlamofireDynamic */,
 				F721E3932D4AB2F500DCB256 /* Kingfisher */,
 			);
 			productName = TaskPets;
@@ -496,11 +493,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F721E37C2D493C1400DCB256 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
-		};
-		F721E37F2D493C1400DCB256 /* AlamofireDynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F721E37C2D493C1400DCB256 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = AlamofireDynamic;
 		};
 		F721E3932D4AB2F500DCB256 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;

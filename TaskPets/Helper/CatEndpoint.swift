@@ -2,9 +2,9 @@ import Foundation
 import Alamofire
 
 enum CatEndpoint: Endpoint {
-    case getBreeds(limit: Int)
+    case getBreeds(limit: Int, page: Int)
     case getImage(String) //reference_image_ids
-
+    
     
     var baseURL: URL {
         return URL(string: "https://api.thecatapi.com/v1")!
@@ -29,8 +29,8 @@ enum CatEndpoint: Endpoint {
     
     var parameters: [String : Any]? {
         switch self {
-        case .getBreeds(let limit):
-            return ["limit": limit]
+        case .getBreeds(let limit, let page):
+            return ["limit": limit, "page": page]
         case .getImage:
             return nil
         }

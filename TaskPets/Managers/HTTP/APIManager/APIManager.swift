@@ -3,14 +3,14 @@ import Foundation
 import Alamofire
 
 protocol APIManagerProtocol {
-    func fetchBreeds(limit: Int) async throws -> [BreedModel]
+    func fetchBreeds(limit: Int, page: Int) async throws -> [BreedModel]
     func fetchImageById(_ id: String) async throws -> CatImage
 }
 
 final class APIManager: APIManagerProtocol {
     //fetching breeds
-    func fetchBreeds(limit: Int) async throws -> [BreedModel] {
-        let endPoint = CatEndpoint.getBreeds(limit: limit)
+    func fetchBreeds(limit: Int, page: Int) async throws -> [BreedModel] {
+        let endPoint = CatEndpoint.getBreeds(limit: limit, page: page)
         //request from Endpoint
         guard let request = endPoint.urlRequest else {
             throw APIError.networkError(message: "Failed to create URLRequest for breeds")

@@ -10,20 +10,36 @@ class BreedListViewModel: ObservableObject {
     
     private let apiManager: APIManagerProtocol
     
+    //pagination
+    private let limit = 12 //cells with cat limit
+    private var currentPage = 0
+    private var canLoadMore = true
+    
     init(apiManager: APIManagerProtocol = APIManager()) {
         self.apiManager = apiManager
         Task {
-            await fetchhBreedsWithimages(limit: 20)
+            await fetchNextPage()
         }
     }
     //Fetching data
-    func fetchhBreedsWithimages(limit: Int) async {
+    func fetchNextPage() async {
+        //not fetching and not last page
+        guard canLoadMore, !isLoading else { return }
+        
         isLoading = true
         errorMessage = nil
         
         do {
-            let rawBreeds = try await apiManager.fetchBreeds(limit: limit)
+            //request current page
+            let rawBreeds = try await apiManager.fetchBreeds(limit: limit, page: currentPage)
+            
+            //if less then limit => no more data
+            if rawBreeds.count < limit {
+                canLoadMore = false
+            }
+            
             var updatedBreeds = rawBreeds //copy arr that we gonna change
+            
             
             //Creating task group that return Tuple(String,String?) where (breed id, image url or nil)
             try await withThrowingTaskGroup(of: (String,String?).self) { group in
@@ -50,7 +66,10 @@ class BreedListViewModel: ObservableObject {
                     }
                 }
             }
-            self.breeds = updatedBreeds
+            //append new breeds to general array
+            self.breeds += updatedBreeds
+            //increase page
+            currentPage += 1
         } catch {
             self.errorMessage = error.localizedDescription
         }

@@ -14,7 +14,7 @@ struct BreedListView: View {
         VStack {
             NavigationStack {
                 Group {
-                    if viewModel.isLoading {
+                    if viewModel.isLoading && viewModel.breeds.isEmpty{
                         ProgressView("Loading Breeds")
                     } else if let error = viewModel.errorMessage {
                         Text("Error: \(error)")
@@ -25,7 +25,18 @@ struct BreedListView: View {
                                     NavigationLink(value: breed) {
                                         BreedCellView(breed: breed)
                                         .frame(width: 110, height: 150)
+                                        .onAppear {
+                                            if breed == viewModel.breeds.last {
+                                                Task {
+                                                    await viewModel.fetchNextPage()
+                                                }
+                                            }
+                                        }
                                     }
+                                }
+                                if viewModel.isLoading {
+                                    ProgressView()
+                                        .frame(height: 50)
                                 }
                             }
                             .padding(.horizontal)
