@@ -17,9 +17,11 @@
 		F721E3822D493C3400DCB256 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F721E3812D493C3400DCB256 /* Endpoint.swift */; };
 		F721E3842D493C6200DCB256 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F721E3832D493C6200DCB256 /* APIError.swift */; };
 		F721E3862D493F8A00DCB256 /* BreedListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F721E3852D493F8A00DCB256 /* BreedListViewModel.swift */; };
-		F721E3882D49533100DCB256 /* Breed.swift in Sources */ = {isa = PBXBuildFile; fileRef = F721E3872D49533100DCB256 /* Breed.swift */; };
+		F721E3882D49533100DCB256 /* BreedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F721E3872D49533100DCB256 /* BreedModel.swift */; };
 		F721E38B2D49544E00DCB256 /* CatEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F721E38A2D49544E00DCB256 /* CatEndpoint.swift */; };
 		F721E38D2D4956EB00DCB256 /* BreedCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F721E38C2D4956EB00DCB256 /* BreedCellView.swift */; };
+		F721E3912D497EAE00DCB256 /* BreedDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F721E3902D497EAE00DCB256 /* BreedDetailView.swift */; };
+		F721E3942D4AB2F500DCB256 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = F721E3932D4AB2F500DCB256 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,9 +34,10 @@
 		F721E3812D493C3400DCB256 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		F721E3832D493C6200DCB256 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		F721E3852D493F8A00DCB256 /* BreedListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedListViewModel.swift; sourceTree = "<group>"; };
-		F721E3872D49533100DCB256 /* Breed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Breed.swift; sourceTree = "<group>"; };
+		F721E3872D49533100DCB256 /* BreedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedModel.swift; sourceTree = "<group>"; };
 		F721E38A2D49544E00DCB256 /* CatEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatEndpoint.swift; sourceTree = "<group>"; };
 		F721E38C2D4956EB00DCB256 /* BreedCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedCellView.swift; sourceTree = "<group>"; };
+		F721E3902D497EAE00DCB256 /* BreedDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F721E3942D4AB2F500DCB256 /* Kingfisher in Frameworks */,
 				F721E37E2D493C1400DCB256 /* Alamofire in Frameworks */,
 				F721E3802D493C1400DCB256 /* AlamofireDynamic in Frameworks */,
 			);
@@ -102,6 +106,7 @@
 			children = (
 				F721E3652D4929D600DCB256 /* BreedListView.swift */,
 				F721E38C2D4956EB00DCB256 /* BreedCellView.swift */,
+				F721E3902D497EAE00DCB256 /* BreedDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -109,7 +114,7 @@
 		F721E3742D493AC900DCB256 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				F721E3872D49533100DCB256 /* Breed.swift */,
+				F721E3872D49533100DCB256 /* BreedModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -183,6 +188,7 @@
 			packageProductDependencies = (
 				F721E37D2D493C1400DCB256 /* Alamofire */,
 				F721E37F2D493C1400DCB256 /* AlamofireDynamic */,
+				F721E3932D4AB2F500DCB256 /* Kingfisher */,
 			);
 			productName = TaskPets;
 			productReference = F721E3602D4929D600DCB256 /* TaskPets.app */;
@@ -214,6 +220,7 @@
 			mainGroup = F721E3572D4929D600DCB256;
 			packageReferences = (
 				F721E37C2D493C1400DCB256 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				F721E3922D4AB2F400DCB256 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = F721E3612D4929D600DCB256 /* Products */;
 			projectDirPath = "";
@@ -242,7 +249,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F721E37B2D493BA200DCB256 /* APIManager.swift in Sources */,
-				F721E3882D49533100DCB256 /* Breed.swift in Sources */,
+				F721E3882D49533100DCB256 /* BreedModel.swift in Sources */,
+				F721E3912D497EAE00DCB256 /* BreedDetailView.swift in Sources */,
 				F721E3662D4929D600DCB256 /* BreedListView.swift in Sources */,
 				F721E3842D493C6200DCB256 /* APIError.swift in Sources */,
 				F721E3862D493F8A00DCB256 /* BreedListViewModel.swift in Sources */,
@@ -473,6 +481,14 @@
 				minimumVersion = 5.10.2;
 			};
 		};
+		F721E3922D4AB2F400DCB256 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.1.4;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -485,6 +501,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F721E37C2D493C1400DCB256 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = AlamofireDynamic;
+		};
+		F721E3932D4AB2F500DCB256 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F721E3922D4AB2F400DCB256 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

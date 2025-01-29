@@ -22,21 +22,27 @@ struct BreedListView: View {
                         ScrollView {
                             LazyVGrid(columns: columns, spacing: 10) {
                                 ForEach(viewModel.breeds) { breed in
-//                                    NavigationLink(value: breed) {
-//                                        BreedCellView(breed: breed)
-//                                    }
+                                    NavigationLink(value: breed) {
+                                        BreedCellView(breed: breed)
+                                        .frame(width: 110, height: 150)
+                                    }
                                 }
                             }
                             .padding(.horizontal)
                         }
+                        .scrollIndicators(.hidden)
                     }
                 }
                 .navigationTitle("Cat Breeds")
-                //destination
+                .navigationDestination(for: BreedModel.self) { breed in
+                    BreedDetailView(breed: breed)
+                }
+
             }
         }
         .padding()
     }
+    
 }
 
 #Preview {
