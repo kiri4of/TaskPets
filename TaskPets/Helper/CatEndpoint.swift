@@ -2,16 +2,20 @@ import Foundation
 import Alamofire
 
 enum CatEndpoint: Endpoint {
-    case getBreeds
+    case getBreeds(limit: Int, page: Int)
+    case getImage(String) //reference_image_ids
+    
     
     var baseURL: URL {
-        return URL(string: "https://api.thecatapi.com")!
+        return URL(string: "https://api.thecatapi.com/v1")!
     }
     
     var path: String {
         switch self {
         case .getBreeds:
-            return "/v1/breeds"
+            return "breeds"
+        case .getImage(let referenceId):
+            return "images/\(referenceId)"
         }
     }
     
@@ -20,15 +24,20 @@ enum CatEndpoint: Endpoint {
     }
     
     var headers: [String : String]? {
-        //APIkey
-        return ["x-api-key": "apiKey"]
+        return ["x-api-key": "live_2Fy06qOv4GECl8r516tvgsWpvKCnj2xXtHrH7r2fwDUGoDJYJC7viDbJO2EXTIwF"]
     }
     
     var parameters: [String : Any]? {
-        return nil
+        switch self {
+        case .getBreeds(let limit, let page):
+            return ["limit": limit, "page": page]
+        case .getImage:
+            return nil
+        }
     }
     
     var encoding: ParameterEncoding {
         return URLEncoding.default
     }
+    
 }
