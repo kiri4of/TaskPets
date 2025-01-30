@@ -13,7 +13,7 @@ class BreedListViewModel: ObservableObject {
     //pagination
     private let limit = 12 //cells with cat limit
     private var currentPage = 0
-    private var canLoadMore = true
+    var canLoadMore = true
     
     init(apiManager: APIManagerProtocol = APIManager()) {
         self.apiManager = apiManager
@@ -76,6 +76,4 @@ class BreedListViewModel: ObservableObject {
         
         isLoading = false 
     }
-
-    
 }

@@ -48,7 +48,6 @@ struct BreedListView: View {
                 .navigationDestination(for: BreedModel.self) { breed in
                     BreedDetailView(breed: breed)
                 }
-
             }
         }
         .padding()
